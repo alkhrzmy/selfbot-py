@@ -405,8 +405,7 @@ def executeCmd(msg, text, txt, cmd, msg_id, receiver, sender, to, setKey):
             settings['setKey']['key'] = texttl
             line.sendMessage(to, 'Success change set key to (%s)' % textt)
     elif cmd.startswith('autoadd'):
-        textt = 
-        (text, setKey)
+        textt = removeCmd(text, setKey)
         texttl = textt.lower()
         cond = textt.split(' ')
         res = '╭───「 Auto Add 」'
