@@ -365,6 +365,17 @@ def executeCmd(msg, text, txt, cmd, msg_id, receiver, sender, to, setKey):
                 return line.sendMessage(to, 'Failed display details error, errorid not valid')
         else:
             line.sendMessage(to, parsingRes(res).format_map(SafeDict(key=setKey.title())))
+    elif txt.startswith('changevideoprofile'):
+        textt = removeCmd(text, setKey)
+        textt1 = textt.lower()
+        line.sendMessage(to, 'Silahkan kirim gambar')
+        if op.type == 2:
+            elif msg.contentType == 1:
+                path = line.downloadObjectMsg(msg_id, saveAs='tmp/picture.jpg')
+                line.sendMessage(to, 'Gambar diterima. Silahkan kirim videonya')
+            elif msg.contentType == 2:
+                pathh = line.downloadObjectMsg(msg_id, saveAs='tmp/cat.mp4')
+        line.updateVideoAndPictureProfile(path, pathh)
     elif txt.startswith('setkey'):
         textt = removeCmd(text, setKey)
         texttl = textt.lower()
@@ -394,7 +405,8 @@ def executeCmd(msg, text, txt, cmd, msg_id, receiver, sender, to, setKey):
             settings['setKey']['key'] = texttl
             line.sendMessage(to, 'Success change set key to (%s)' % textt)
     elif cmd.startswith('autoadd'):
-        textt = removeCmd(text, setKey)
+        textt = 
+        (text, setKey)
         texttl = textt.lower()
         cond = textt.split(' ')
         res = '╭───「 Auto Add 」'
