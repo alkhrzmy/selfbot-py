@@ -370,7 +370,7 @@ def executeCmd(msg, text, txt, cmd, msg_id, receiver, sender, to, setKey):
         textt1 = textt.lower()
         line.sendMessage(to, 'Silahkan kirim gambar')
         if op.type == 2:
-            elif msg.contentType == 1:
+            if msg.contentType == 1:
                 path = line.downloadObjectMsg(msg_id, saveAs='tmp/picture.jpg')
                 line.sendMessage(to, 'Gambar diterima. Silahkan kirim videonya')
             elif msg.contentType == 2:
